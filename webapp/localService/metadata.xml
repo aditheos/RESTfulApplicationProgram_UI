@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zintlra_ui_pb_head" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="I_DraftAdministrativeDataType" sap:label="Draft Administration Data" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="DraftEntityType"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Draft (Technical ID)"/>
+                <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Draft Entity ID"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="CreatedByUserDescription" sap:label="Draft Created By"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="LastChangedByUserDescription" sap:label="Draft Last Changed By"/>
+                <Property Name="DraftAccessType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Draft Access Type"/>
+                <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft In Process Since"/>
+                <Property Name="InProcessByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="InProcessByUserDescription" sap:label="Draft In Process By"/>
+                <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Is Kept By User"/>
+                <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Locked Since"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Created By Me"/>
+                <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Last Changed By Me"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft In Process By Me"/>
+                <Property Name="CreatedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft Created By (Description)"/>
+                <Property Name="LastChangedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft Last Changed By (Description)"/>
+                <Property Name="InProcessByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft In Process By (Description)"/>
+            </EntityType>
+            <EntityType Name="ContactType" sap:label="Phone Book Header Consumption View" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PbUuid"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Edit_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="removeFavourite_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="setFavourite_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="to_item_oc" Type="Edm.Boolean" sap:label="Dynamic CbA-Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PbUuid" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbId" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:label="Phone Book ID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbOwner" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created by" sap:quickinfo="Name of Person who Created the Object" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbOwnerName" Type="Edm.String" MaxLength="80" sap:label="Full Name" sap:quickinfo="Full Name of Person"/>
+                <Property Name="PbTagCode" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="PbTagText" sap:label="Phonebook Tag" sap:value-list="standard"/>
+                <Property Name="PbTagText" Type="Edm.String" MaxLength="20" sap:label="Phonebook Tag Text"/>
+                <Property Name="PbFirstName" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="First Name"/>
+                <Property Name="PbLastName" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Last Name"/>
+                <Property Name="PbContactName" Type="Edm.String" MaxLength="81"/>
+                <Property Name="PbCreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Changed At" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbEmailId" Type="Edm.String" MaxLength="241" sap:label="E-Mail Address" sap:semantics="email"/>
+                <Property Name="PbFavourite" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Favourite?"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has Draft" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has active" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Is active" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="cds_zintlra_ui_pb_head.assoc_202E7438F71DF2F3FC037F7F92649DC9" FromRole="FromRole_assoc_202E7438F71DF2F3FC037F7F92649DC9" ToRole="ToRole_assoc_202E7438F71DF2F3FC037F7F92649DC9"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="cds_zintlra_ui_pb_head.assoc_082F3B595C063B6395A841CF7FCC22E4" FromRole="FromRole_assoc_082F3B595C063B6395A841CF7FCC22E4" ToRole="ToRole_assoc_082F3B595C063B6395A841CF7FCC22E4"/>
+                <NavigationProperty Name="to_item" Relationship="cds_zintlra_ui_pb_head.assoc_9C9A907B518287851AAB4943E4709B42" FromRole="FromRole_assoc_9C9A907B518287851AAB4943E4709B42" ToRole="ToRole_assoc_9C9A907B518287851AAB4943E4709B42"/>
+                <NavigationProperty Name="to_owner" Relationship="cds_zintlra_ui_pb_head.assoc_466809973F14BAF16B247174B7565CD6" FromRole="FromRole_assoc_466809973F14BAF16B247174B7565CD6" ToRole="ToRole_assoc_466809973F14BAF16B247174B7565CD6"/>
+            </EntityType>
+            <EntityType Name="PhoneNumberType" sap:label="Phone Book Item Consumption View" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PbItemUuid"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="setDefault_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PbItemUuid" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbUuid" Type="Edm.Guid" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbId" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:label="Phone Book ID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbItemId" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Phone Book Item No" sap:quickinfo="Phone Book Item Number" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbCategory" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="PbCategoryText" sap:label="Contact Category" sap:value-list="standard"/>
+                <Property Name="PbCategoryText" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="Category Text" sap:quickinfo="Contact Category Text"/>
+                <Property Name="PbTelephone" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Telephone" sap:quickinfo="First telephone no.: dialling code+number"/>
+                <Property Name="PbCreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Changed At" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PbDefault" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Default?"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has Draft" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has active" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Is active" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="cds_zintlra_ui_pb_head.assoc_1FBA4243EB912FC1356674ABE5D3ECE1" FromRole="FromRole_assoc_1FBA4243EB912FC1356674ABE5D3ECE1" ToRole="ToRole_assoc_1FBA4243EB912FC1356674ABE5D3ECE1"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="cds_zintlra_ui_pb_head.assoc_FDBA97A0E32662D6CC5AB330F09511C9" FromRole="FromRole_assoc_FDBA97A0E32662D6CC5AB330F09511C9" ToRole="ToRole_assoc_FDBA97A0E32662D6CC5AB330F09511C9"/>
+                <NavigationProperty Name="to_catText" Relationship="cds_zintlra_ui_pb_head.assoc_3086BD7DD36371B0EF655971912CDB39" FromRole="FromRole_assoc_3086BD7DD36371B0EF655971912CDB39" ToRole="ToRole_assoc_3086BD7DD36371B0EF655971912CDB39"/>
+                <NavigationProperty Name="to_hdr" Relationship="cds_zintlra_ui_pb_head.assoc_E2F0674A39E1F9FE89A3DA634146C83E" FromRole="FromRole_assoc_E2F0674A39E1F9FE89A3DA634146C83E" ToRole="ToRole_assoc_E2F0674A39E1F9FE89A3DA634146C83E"/>
+            </EntityType>
+            <EntityType Name="CategoryType" sap:label="Contact Category View" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PbCategory"/>
+                    <PropertyRef Name="PbLanguage"/>
+                </Key>
+                <Property Name="PbCategory" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Contact Category"/>
+                <Property Name="PbLanguage" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="PbCategoryText" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="Category Text" sap:quickinfo="Contact Category Text"/>
+            </EntityType>
+            <EntityType Name="TagType" sap:label="Phone Book Tags" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PbTagCode"/>
+                    <PropertyRef Name="PbLanguage"/>
+                </Key>
+                <Property Name="PbTagCode" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Phonebook Tag"/>
+                <Property Name="PbLanguage" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="PbTagText" Type="Edm.String" MaxLength="20" sap:label="Phonebook Tag Text"/>
+            </EntityType>
+            <EntityType Name="UserType" sap:label="Phone Book User View" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OwnerID"/>
+                </Key>
+                <Property Name="OwnerID" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="User" sap:quickinfo="User Name in User Master Record"/>
+                <Property Name="Person" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Person Number"/>
+                <Property Name="FirstName" Type="Edm.String" MaxLength="40" sap:label="First name"/>
+                <Property Name="LastName" Type="Edm.String" MaxLength="40" sap:label="Last name"/>
+                <Property Name="FullName" Type="Edm.String" MaxLength="80" sap:label="Full Name" sap:quickinfo="Full Name of Person"/>
+            </EntityType>
+            <ComplexType Name="DummyFunctionImportResult">
+                <Property Name="IsInvalid" Type="Edm.Boolean" sap:label="TRUE"/>
+            </ComplexType>
+            <Association Name="assoc_082F3B595C063B6395A841CF7FCC22E4" sap:content-version="1">
+                <End Type="cds_zintlra_ui_pb_head.ContactType" Multiplicity="1" Role="FromRole_assoc_082F3B595C063B6395A841CF7FCC22E4"/>
+                <End Type="cds_zintlra_ui_pb_head.ContactType" Multiplicity="0..1" Role="ToRole_assoc_082F3B595C063B6395A841CF7FCC22E4"/>
+            </Association>
+            <Association Name="assoc_9C9A907B518287851AAB4943E4709B42" sap:content-version="1">
+                <End Type="cds_zintlra_ui_pb_head.ContactType" Multiplicity="1" Role="FromRole_assoc_9C9A907B518287851AAB4943E4709B42">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="cds_zintlra_ui_pb_head.PhoneNumberType" Multiplicity="*" Role="ToRole_assoc_9C9A907B518287851AAB4943E4709B42"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_9C9A907B518287851AAB4943E4709B42">
+                        <PropertyRef Name="PbUuid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_9C9A907B518287851AAB4943E4709B42">
+                        <PropertyRef Name="PbUuid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_466809973F14BAF16B247174B7565CD6" sap:content-version="1">
+                <End Type="cds_zintlra_ui_pb_head.ContactType" Multiplicity="1" Role="FromRole_assoc_466809973F14BAF16B247174B7565CD6"/>
+                <End Type="cds_zintlra_ui_pb_head.UserType" Multiplicity="0..1" Role="ToRole_assoc_466809973F14BAF16B247174B7565CD6"/>
+            </Association>
+            <Association Name="assoc_202E7438F71DF2F3FC037F7F92649DC9" sap:content-version="1">
+                <End Type="cds_zintlra_ui_pb_head.ContactType" Multiplicity="1" Role="FromRole_assoc_202E7438F71DF2F3FC037F7F92649DC9"/>
+                <End Type="cds_zintlra_ui_pb_head.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_202E7438F71DF2F3FC037F7F92649DC9"/>
+            </Association>
+            <Association Name="assoc_1FBA4243EB912FC1356674ABE5D3ECE1" sap:content-version="1">
+                <End Type="cds_zintlra_ui_pb_head.PhoneNumberType" Multiplicity="1" Role="FromRole_assoc_1FBA4243EB912FC1356674ABE5D3ECE1"/>
+                <End Type="cds_zintlra_ui_pb_head.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_1FBA4243EB912FC1356674ABE5D3ECE1"/>
+            </Association>
+            <Association Name="assoc_FDBA97A0E32662D6CC5AB330F09511C9" sap:content-version="1">
+                <End Type="cds_zintlra_ui_pb_head.PhoneNumberType" Multiplicity="1" Role="FromRole_assoc_FDBA97A0E32662D6CC5AB330F09511C9"/>
+                <End Type="cds_zintlra_ui_pb_head.PhoneNumberType" Multiplicity="0..1" Role="ToRole_assoc_FDBA97A0E32662D6CC5AB330F09511C9"/>
+            </Association>
+            <Association Name="assoc_3086BD7DD36371B0EF655971912CDB39" sap:content-version="1">
+                <End Type="cds_zintlra_ui_pb_head.PhoneNumberType" Multiplicity="1" Role="FromRole_assoc_3086BD7DD36371B0EF655971912CDB39"/>
+                <End Type="cds_zintlra_ui_pb_head.CategoryType" Multiplicity="0..1" Role="ToRole_assoc_3086BD7DD36371B0EF655971912CDB39"/>
+            </Association>
+            <Association Name="assoc_E2F0674A39E1F9FE89A3DA634146C83E" sap:content-version="1">
+                <End Type="cds_zintlra_ui_pb_head.PhoneNumberType" Multiplicity="1" Role="FromRole_assoc_E2F0674A39E1F9FE89A3DA634146C83E"/>
+                <End Type="cds_zintlra_ui_pb_head.ContactType" Multiplicity="1" Role="ToRole_assoc_E2F0674A39E1F9FE89A3DA634146C83E"/>
+            </Association>
+            <EntityContainer Name="cds_zintlra_ui_pb_head_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="I_DraftAdministrativeData" EntityType="cds_zintlra_ui_pb_head.I_DraftAdministrativeDataType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Contact" EntityType="cds_zintlra_ui_pb_head.ContactType" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="PhoneNumber" EntityType="cds_zintlra_ui_pb_head.PhoneNumberType" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="Category" EntityType="cds_zintlra_ui_pb_head.CategoryType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="Tag" EntityType="cds_zintlra_ui_pb_head.TagType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="User" EntityType="cds_zintlra_ui_pb_head.UserType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_3086BD7DD36371B0EF655971912CDB39" Association="cds_zintlra_ui_pb_head.assoc_3086BD7DD36371B0EF655971912CDB39" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PhoneNumber" Role="FromRole_assoc_3086BD7DD36371B0EF655971912CDB39"/>
+                    <End EntitySet="Category" Role="ToRole_assoc_3086BD7DD36371B0EF655971912CDB39"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_1FBA4243EB912FC1356674ABE5D3ECE1" Association="cds_zintlra_ui_pb_head.assoc_1FBA4243EB912FC1356674ABE5D3ECE1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PhoneNumber" Role="FromRole_assoc_1FBA4243EB912FC1356674ABE5D3ECE1"/>
+                    <End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_1FBA4243EB912FC1356674ABE5D3ECE1"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_FDBA97A0E32662D6CC5AB330F09511C9" Association="cds_zintlra_ui_pb_head.assoc_FDBA97A0E32662D6CC5AB330F09511C9" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PhoneNumber" Role="FromRole_assoc_FDBA97A0E32662D6CC5AB330F09511C9"/>
+                    <End EntitySet="PhoneNumber" Role="ToRole_assoc_FDBA97A0E32662D6CC5AB330F09511C9"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_466809973F14BAF16B247174B7565CD6" Association="cds_zintlra_ui_pb_head.assoc_466809973F14BAF16B247174B7565CD6" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Contact" Role="FromRole_assoc_466809973F14BAF16B247174B7565CD6"/>
+                    <End EntitySet="User" Role="ToRole_assoc_466809973F14BAF16B247174B7565CD6"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_082F3B595C063B6395A841CF7FCC22E4" Association="cds_zintlra_ui_pb_head.assoc_082F3B595C063B6395A841CF7FCC22E4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Contact" Role="FromRole_assoc_082F3B595C063B6395A841CF7FCC22E4"/>
+                    <End EntitySet="Contact" Role="ToRole_assoc_082F3B595C063B6395A841CF7FCC22E4"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_9C9A907B518287851AAB4943E4709B42" Association="cds_zintlra_ui_pb_head.assoc_9C9A907B518287851AAB4943E4709B42" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Contact" Role="FromRole_assoc_9C9A907B518287851AAB4943E4709B42"/>
+                    <End EntitySet="PhoneNumber" Role="ToRole_assoc_9C9A907B518287851AAB4943E4709B42"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_202E7438F71DF2F3FC037F7F92649DC9" Association="cds_zintlra_ui_pb_head.assoc_202E7438F71DF2F3FC037F7F92649DC9" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Contact" Role="FromRole_assoc_202E7438F71DF2F3FC037F7F92649DC9"/>
+                    <End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_202E7438F71DF2F3FC037F7F92649DC9"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_E2F0674A39E1F9FE89A3DA634146C83E" Association="cds_zintlra_ui_pb_head.assoc_E2F0674A39E1F9FE89A3DA634146C83E" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PhoneNumber" Role="FromRole_assoc_E2F0674A39E1F9FE89A3DA634146C83E"/>
+                    <End EntitySet="Contact" Role="ToRole_assoc_E2F0674A39E1F9FE89A3DA634146C83E"/>
+                </AssociationSet>
+                <FunctionImport Name="ContactActivate" ReturnType="cds_zintlra_ui_pb_head.ContactType" EntitySet="Contact" m:HttpMethod="POST" sap:action-for="cds_zintlra_ui_pb_head.ContactType">
+                    <Parameter Name="PbUuid" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="ContactDiscard" ReturnType="cds_zintlra_ui_pb_head.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zintlra_ui_pb_head.ContactType">
+                    <Parameter Name="PbUuid" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="ContactEdit" ReturnType="cds_zintlra_ui_pb_head.ContactType" EntitySet="Contact" m:HttpMethod="POST" sap:action-for="cds_zintlra_ui_pb_head.ContactType" sap:applicable-path="Edit_ac">
+                    <Parameter Name="PbUuid" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="ContactPrepare" ReturnType="cds_zintlra_ui_pb_head.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zintlra_ui_pb_head.ContactType">
+                    <Parameter Name="PbUuid" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="removeFavourite" ReturnType="cds_zintlra_ui_pb_head.ContactType" EntitySet="Contact" m:HttpMethod="POST" sap:action-for="cds_zintlra_ui_pb_head.ContactType" sap:applicable-path="removeFavourite_ac">
+                    <Parameter Name="PbUuid" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="setFavourite" ReturnType="cds_zintlra_ui_pb_head.ContactType" EntitySet="Contact" m:HttpMethod="POST" sap:action-for="cds_zintlra_ui_pb_head.ContactType" sap:applicable-path="setFavourite_ac">
+                    <Parameter Name="PbUuid" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="setDefault" ReturnType="cds_zintlra_ui_pb_head.PhoneNumberType" EntitySet="PhoneNumber" m:HttpMethod="POST" sap:action-for="cds_zintlra_ui_pb_head.PhoneNumberType" sap:applicable-path="setDefault_ac">
+                    <Parameter Name="PbItemUuid" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="cds_zintlra_ui_pb_head.cds_zintlra_ui_pb_head_Entities/Contact" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record>
+                        <PropertyValue Property="ActivationAction" String="cds_zintlra_ui_pb_head.cds_zintlra_ui_pb_head_Entities/ContactActivate"/>
+                        <PropertyValue Property="DiscardAction" String="cds_zintlra_ui_pb_head.cds_zintlra_ui_pb_head_Entities/ContactDiscard"/>
+                        <PropertyValue Property="EditAction" String="cds_zintlra_ui_pb_head.cds_zintlra_ui_pb_head_Entities/ContactEdit"/>
+                        <PropertyValue Property="PreparationAction" String="cds_zintlra_ui_pb_head.cds_zintlra_ui_pb_head_Entities/ContactPrepare"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>Edit_ac</PropertyPath>
+                                <PropertyPath>removeFavourite_ac</PropertyPath>
+                                <PropertyPath>setFavourite_ac</PropertyPath>
+                                <PropertyPath>to_item_oc</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_item"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Path="to_item_oc"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Edit_ac</PropertyPath>
+                                <PropertyPath>removeFavourite_ac</PropertyPath>
+                                <PropertyPath>setFavourite_ac</PropertyPath>
+                                <PropertyPath>to_item_oc</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zintlra_ui_pb_head.cds_zintlra_ui_pb_head_Entities/PhoneNumber" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftNode">
+                    <Record/>
+                </Annotation>
+                <Annotation Term="Common.DraftActivationVia">
+                    <Collection>
+                        <String>cds_zintlra_ui_pb_head.cds_zintlra_ui_pb_head_Entities/Contact</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>setDefault_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>setDefault_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zintlra_ui_pb_head.ContactType/PbTagCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String=""/>
+                        <PropertyValue Property="CollectionPath" String="Tag"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PbTagCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="PbTagCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PbLanguage"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PbTagText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zintlra_ui_pb_head.PhoneNumberType/PbCategory" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String=""/>
+                        <PropertyValue Property="CollectionPath" String="Category"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PbCategory"/>
+                                    <PropertyValue Property="ValueListProperty" String="PbCategory"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PbLanguage"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PbCategoryText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zintlra_ui_pb_head.cds_zintlra_ui_pb_head_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zintlra_ui_pb_head.ContactType/PbEmailId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                <Annotation Term="Communication.IsEmailAddress"/>
+            </Annotations>
+            <Annotations Target="cds_zintlra_ui_pb_head.ContactType/PbLastName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zintlra_ui_pb_head.PhoneNumberType/PbTelephone" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zintlra_ui_pb_head.ContactType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>PbUuid</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="Communication.Contact">
+                    <Record>
+                        <PropertyValue Property="fn" Path="PbOwnerName"/>
+                        <PropertyValue Property="email">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="address" Path="PbEmailId"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zintlra_ui_pb_head.UserType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Communication.Contact">
+                    <Record>
+                        <PropertyValue Property="fn" Path="FullName"/>
+                        <PropertyValue Property="n">
+                            <Record>
+                                <PropertyValue Property="given" Path="FirstName"/>
+                                <PropertyValue Property="surname" Path="LastName"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/sap/ZINTLRA_UI_PB_HEAD_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://S43SPT.STOCKLANDNET.COM.AU:44300/sap/opu/odata/sap/ZINTLRA_UI_PB_HEAD_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
