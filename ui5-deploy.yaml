@@ -14,10 +14,10 @@ builder:
       afterTask: generateCachebusterInfo
       configuration:
         target:
-          destination: S43_010
-          url: http://s43spt.stocklandnet.com.au:44300
+          destination: DEV_010
+          url: http://DEV.INTELIRA.TECH:44300
         app:
           name: ZPHONEBOOK
           description: Phone Book Application
           package: ZINTELIRA_RAP
-          transport: S43K900761
+          transport: DEVK900761

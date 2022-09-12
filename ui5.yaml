@@ -17,9 +17,9 @@ server:
           url: https://ui5.sap.com
         backend:
           - path: /sap
-            url: http://s43spt.stocklandnet.com.au:44300
+            url: http://DEV.INTELIRA.TECH:44300
             client: '010'
-            destination: S43_010
+            destination: DEV_010
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

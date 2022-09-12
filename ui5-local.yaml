@@ -30,9 +30,9 @@ server:
         ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
         backend:
           - path: /sap
-            url: http://s43spt.stocklandnet.com.au:44300
+            url: http://DEV.INTELIRA.TECH:44300
             client: '010'
-            destination: S43_010
+            destination: DEV_010
     - name: sap-fe-mockserver
       beforeMiddleware: csp
       configuration:
