@@ -4,6 +4,12 @@ End-to-end application development with the managed approach of the ABAP RESTful
 ## Business Appplication Studio
 [Connecting to Public Repository](https://help.sap.com/docs/SAP%20Business%20Application%20Studio/9d1db9835307451daa8c930fbd9ab264/a47db8bde00647cdb0ea2b06737ad14a.html)
 
+## OData Service
+Link to [Service Repository](https://github.com/intelira/RESTfulApplicationProgram_ABAP_OnPrem)
+
+## More information on this App
+[Application Development with ABAP RESTful Application Programming Model (On-Premise)](https://intelira.tech/2022/09/12/application-development-with-abap-restful-application-programming-model-on-premise/)
+
 ## Application Details
 |               |
 | ------------- |
