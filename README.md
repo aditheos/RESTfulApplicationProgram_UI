@@ -1,3 +1,9 @@
+## Purpose
+End-to-end application development with the managed approach of the ABAP RESTful Application Programming Model and SAP Fiori Elements.
+
+## Business Appplication Studio
+[Connecting to Public Repository](https://help.sap.com/docs/SAP%20Business%20Application%20Studio/9d1db9835307451daa8c930fbd9ab264/a47db8bde00647cdb0ea2b06737ad14a.html)
+
 ## Application Details
 |               |
 | ------------- |
@@ -7,7 +13,7 @@
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Floorplan Used**<br>List Report Object Page V2|
 |**Service Type**<br>SAP System (ABAP On Premise)|
-|**Service URL**<br>http://s43spt.stocklandnet.com.au:44300/sap/opu/odata/sap/ZINTLRA_UI_PB_HEAD_O2
+|**Service URL**<br>http://dev.intelira.tech:44300/sap/opu/odata/sap/ZINTLRA_UI_PB_HEAD_O2
 |**Module Name**<br>phonebook|
 |**Application Title**<br>Phone Book|
 |**Namespace**<br>tech.intelira|
